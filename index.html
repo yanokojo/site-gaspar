@@ -16,8 +16,8 @@
             justify-content: center; 
             padding: 30px 20px; 
             text-align: center; 
-            background-color: #1a1a1a; /* Cinza escuro no topo */
-            border-bottom: 3px solid #8a2020; /* Linha vermelha para destaque */
+            background-color: #1a1a1a; 
+            border-bottom: 3px solid #8a2020; 
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
         header h1 { font-size: 1.8rem; color: white; margin: 10px 0 0 0; text-transform: uppercase; letter-spacing: 1px; }
@@ -90,9 +90,47 @@
             justify-content: center;
             text-decoration: none;
         }
+
+        /* PLAYER DE MÚSICA */
+        .music-player {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(26, 26, 26, 0.9);
+            padding: 10px 15px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid #8a2020;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .music-btn {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .music-btn:hover { color: #8a2020; }
     </style>
 </head>
 <body>
+
+<div class="music-player">
+    <button id="playBtn" class="music-btn" onclick="toggleMusic()">
+        <span id="musicIcon">▶</span> Som Ambiente
+    </button>
+</div>
+
+<audio id="bgMusic" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3" type="audio/mpeg">
+</audio>
 
 <a href="https://wa.me/556291828224" class="zap-flutuante" target="_blank">
     <span style="font-family: Arial; font-weight: bold;">W</span>
@@ -109,7 +147,7 @@
 </section>
 
 <section id="galeria">
-    <h2 style="text-align: center;">Nossos Trabalhos</h2>
+    <h2 style="text-align: center;">Conheça Nossos Trabalhos</h2>
     <div class="galeria">
         <img src="img/forro2.jpg" alt="Trabalho em Gesso 1">
         <img src="img/forro1.jpg" alt="Trabalho em Gesso 2">
@@ -201,7 +239,7 @@ function enviarWhatsapp() {
     const local = document.getElementById('local').value;
     const metragem = document.getElementById('metragem').value;
     
-    let mensagem = `Olá! Vi o site da Gaspar Construção e gostaria de um orçamento:\n\n`;
+    let mensagem = `Olá! Gostaria de um orçamento:\n\n`;
     mensagem += `*Serviço:* ${servico}\n`;
     mensagem += `*Local:* ${local}\n`;
     
@@ -211,6 +249,22 @@ function enviarWhatsapp() {
 
     const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
     window.open(url, '_blank');
+}
+
+function toggleMusic() {
+    const music = document.getElementById('bgMusic');
+    const btn = document.getElementById('musicIcon');
+    const playBtn = document.getElementById('playBtn');
+
+    if (music.paused) {
+        music.play();
+        btn.innerHTML = "⏸";
+        playBtn.style.color = "#8a2020";
+    } else {
+        music.pause();
+        btn.innerHTML = "▶";
+        playBtn.style.color = "white";
+    }
 }
 </script>
 
