@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gaspar Construção Ágil | Especialistas em Drywall</title>
     <style>
-        /* Estilos Básicos e Reset */
-        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; margin: 0; color: #333; background-color: #f4f4f4; }
+        /* Estilos Básicos e Reset - MODO ESCURO */
+        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; margin: 0; color: #e0e0e0; background-color: #121212; }
         
         /* Cabeçalho */
         header { 
@@ -16,17 +16,18 @@
             justify-content: center; 
             padding: 30px 20px; 
             text-align: center; 
-            background-color: #8a2020; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            background-color: #1a1a1a; /* Cinza escuro no topo */
+            border-bottom: 3px solid #8a2020; /* Linha vermelha para destaque */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
         header h1 { font-size: 1.8rem; color: white; margin: 10px 0 0 0; text-transform: uppercase; letter-spacing: 1px; }
         
         /* Seções */
         section { padding: 3rem 1rem; max-width: 1000px; margin: auto; }
-        .hero { background: white; text-align: center; border-radius: 15px; margin-top: -20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .hero { background: #1e1e1e; text-align: center; border-radius: 15px; margin-top: -20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
         .hero h2 { color: #8a2020; margin-bottom: 10px; }
 
-        /* Galeria Ajustada (Fotos do mesmo tamanho) */
+        /* Galeria */
         .galeria { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
@@ -36,25 +37,27 @@
         .galeria img { 
             width: 100%; 
             height: 250px; 
-            object-fit: cover; /* Isso faz as fotos ficarem alinhadas sem distorcer */
+            object-fit: cover; 
             border-radius: 12px; 
+            border: 1px solid #333;
             transition: transform 0.3s;
         }
-        .galeria img:hover { transform: scale(1.03); }
+        .galeria img:hover { transform: scale(1.03); border-color: #8a2020; }
 
         /* Container de Orçamento */
         .orcamento-box {
-            background: #fff;
+            background: #1e1e1e;
             padding: 30px;
             border-radius: 15px;
             border-top: 5px solid #25d366;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
             text-align: center;
         }
         .form-group { margin-bottom: 15px; text-align: left; max-width: 400px; margin-left: auto; margin-right: auto; }
-        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; color: #555; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; color: #bbb; }
         .form-group select, .form-group input { 
-            width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; 
+            width: 100%; padding: 12px; border: 1px solid #444; border-radius: 8px; font-size: 16px; 
+            background-color: #2a2a2a; color: white;
         }
 
         .btn-whatsapp { 
@@ -65,14 +68,35 @@
         }
         .btn-whatsapp:hover { background: #1ebe57; transform: translateY(-2px); }
 
-        /* Depoimentos */
-        .testimonials { background: #8a2020; color: white; padding: 3rem 2rem; border-radius: 15px; text-align: center; }
-        blockquote { font-style: italic; font-size: 1.2rem; }
+        /* Footer */
+        footer { text-align: center; padding: 2rem; color: #555; font-size: 0.9rem; background: #0a0a0a; }
 
-        footer { text-align: center; padding: 2rem; color: #777; font-size: 0.9rem; }
+        /* Botão Flutuante do WhatsApp */
+        .zap-flutuante {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
+
+<a href="https://wa.me/556291828224" class="zap-flutuante" target="_blank">
+    <span style="font-family: Arial; font-weight: bold;">W</span>
+</a>
 
 <header>
     <img src="img/logotransparente.png" alt="Logo" style="height: 100px; width: auto;">
@@ -85,7 +109,7 @@
 </section>
 
 <section id="galeria">
-    <h2 style="text-align: center;">Conheça nossos serviços</h2>
+    <h2 style="text-align: center;">Nossos Trabalhos</h2>
     <div class="galeria">
         <img src="img/forro2.jpg" alt="Trabalho em Gesso 1">
         <img src="img/forro1.jpg" alt="Trabalho em Gesso 2">
@@ -94,14 +118,14 @@
 </section>
 
 <section id="servicos">
-    <div style="background: white; padding: 25px; border-radius: 12px; border-left: 5px solid #8a2020;">
+    <div style="background: #1e1e1e; padding: 25px; border-radius: 12px; border-left: 5px solid #8a2020; color: #e0e0e0;">
         <p>Utilizamos o <strong>sistema Drywall</strong>, uma tecnologia que garante obra limpa, rápida e acabamento impecável. Ideal para forros decorativos e divisórias funcionais.</p>
     </div>
 </section>
 
 <section id="orcamento">
     <div class="orcamento-box">
-        <h2>SOLICITE SEU ORÇAMENTO</h2>
+        <h2 style="color: white;">SOLICITE SEU ORÇAMENTO</h2>
         <p>Preencha os detalhes abaixo para agilizar seu atendimento:</p>
         
         <div class="form-group">
@@ -132,37 +156,35 @@
     </div>
 </section>
 
-<section id="avaliacoes" style="background: #fff; padding: 4rem 1rem; border-radius: 20px; margin-top: 20px;">
+<section id="avaliacoes" style="background: #1e1e1e; padding: 4rem 1rem; border-radius: 20px; margin-top: 20px;">
     <h2 style="text-align: center; color: #8a2020; margin-bottom: 30px;">O que nossos clientes dizem</h2>
     
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
         
-        <div style="background: #f9f9f9; padding: 20px; border-radius: 15px; border: 1px solid #eee; position: relative;">
+        <div style="background: #2a2a2a; padding: 20px; border-radius: 15px; border: 1px solid #333; position: relative;">
             <div style="color: #f1c40f; font-size: 20px; margin-bottom: 10px;">★★★★★</div>
-            <p style="font-style: italic; color: #555;">"O trabalho de drywall no meu forro ficou impecável. Rapidez e limpeza nota 10!"</p>
-            <strong style="color: #333;">— Ricardo Souza</strong>
+            <p style="font-style: italic; color: #bbb;">"O trabalho de drywall no meu forro ficou impecável. Rapidez e limpeza nota 10!"</p>
+            <strong style="color: #fff;">— Ricardo Souza</strong>
         </div>
 
-        <div style="background: #f9f9f9; padding: 20px; border-radius: 15px; border: 1px solid #eee;">
+        <div style="background: #2a2a2a; padding: 20px; border-radius: 15px; border: 1px solid #333;">
             <div style="color: #f1c40f; font-size: 20px; margin-bottom: 10px;">★★★★★</div>
-            <p style="font-style: italic; color: #555;">"Fizeram a divisória da minha loja em tempo recorde. Preço justo e muita qualidade."</p>
-            <strong style="color: #333;">— Ana Paula (Loja Bella)</strong>
+            <p style="font-style: italic; color: #bbb;">"Fizeram a divisória da minha loja em tempo recorde. Preço justo e muita qualidade."</p>
+            <strong style="color: #fff;">— Ana Paula (Loja Bella)</strong>
         </div>
 
-        <div style="background: #f9f9f9; padding: 20px; border-radius: 15px; border: 1px solid #eee;">
+        <div style="background: #2a2a2a; padding: 20px; border-radius: 15px; border: 1px solid #333;">
             <div style="color: #f1c40f; font-size: 20px; margin-bottom: 10px;">★★★★★</div>
-            <p style="font-style: italic; color: #555;">"Excelente atendimento desde o orçamento até o acabamento final. Recomendo!"</p>
-            <strong style="color: #333;">— Marcos Oliveira</strong>
+            <p style="font-style: italic; color: #bbb;">"Excelente atendimento desde o orçamento até o acabamento final. Recomendo!"</p>
+            <strong style="color: #fff;">— Marcos Oliveira</strong>
         </div>
 
     </div>
 
     <div style="text-align: center; margin-top: 40px;">
-        <p style="font-weight: bold; color: #666;">Já é nosso cliente?</p>
+        <p style="font-weight: bold; color: #bbb;">Já é nosso cliente?</p>
         <a href="https://wa.me/556291828224?text=Olá! Gostaria de deixar um elogio sobre o serviço." 
-           style="text-decoration: none; color: #8a2020; border: 2px solid #8a2020; padding: 10px 20px; border-radius: 50px; font-weight: bold; transition: 0.3s;"
-           onmouseover="this.style.background='#8a2020'; this.style.color='white'"
-           onmouseout="this.style.background='transparent'; this.style.color='#8a2020'">
+           style="text-decoration: none; color: white; border: 2px solid #8a2020; padding: 10px 20px; border-radius: 50px; font-weight: bold; transition: 0.3s; background: #8a2020;">
            DEIXAR MINHA AVALIAÇÃO
         </a>
     </div>
@@ -174,13 +196,12 @@
 
 <script>
 function enviarWhatsapp() {
-    const telefone = "556291828224"; // Seu número já está aqui
-    
+    const telefone = "556291828224";
     const servico = document.getElementById('servico').value;
     const local = document.getElementById('local').value;
     const metragem = document.getElementById('metragem').value;
     
-    let mensagem = `Olá! Gostaria de fazer um orçamento:\n\n`;
+    let mensagem = `Olá! Vi o site da Gaspar Construção e gostaria de um orçamento:\n\n`;
     mensagem += `*Serviço:* ${servico}\n`;
     mensagem += `*Local:* ${local}\n`;
     
