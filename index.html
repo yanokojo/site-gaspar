@@ -9,7 +9,7 @@
     <style>
         /* Estilos Básicos e Reset */
         * { box-sizing: border-box; scroll-behavior: smooth; }
-        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 0; color: #e0e0e0; background-color: #121212; padding-top: 70px; /* Espaço para o menu fixo */ }
+        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 0; color: #e0e0e0; background-color: #121212; padding-top: 70px; }
         
         /* Menu Superior Fixo */
         .navbar {
@@ -19,13 +19,17 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.3); z-index: 1001;
             border-bottom: 2px solid #333;
         }
-        .nav-links { display: flex; gap: 15px; }
+        .nav-links { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
         .nav-links a {
-            text-decoration: none; color: #bbb; font-weight: 600; font-size: 0.9rem;
-            text-transform: uppercase; padding: 10px 15px; border-radius: 5px;
+            text-decoration: none; color: #bbb; font-weight: 600; font-size: 0.85rem;
+            text-transform: uppercase; padding: 8px 12px; border-radius: 5px;
             transition: all 0.3s ease; border: 1px solid transparent;
+            display: flex; align-items: center; gap: 5px;
         }
         .nav-links a:hover { color: #fff; background-color: rgba(138, 32, 32, 0.1); border-color: #8a2020; }
+        
+        /* Cor especial para o Instagram no hover */
+        .nav-links a.nav-instagram:hover { border-color: #E1306C; background-color: rgba(225, 48, 108, 0.1); }
 
         /* Cabeçalho */
         header { 
@@ -43,7 +47,7 @@
         .section-title { text-align: center; margin-bottom: 45px; font-size: 2rem; color: #fff; }
         .section-title span { color: #8a2020; }
 
-        /* Galerias (Drywall e Steel Frame) */
+        /* Galerias */
         .galeria { 
             display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
             gap: 25px; padding: 20px 0;
@@ -81,7 +85,7 @@
         }
         .btn-whatsapp:hover { background: #1ebe57; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); }
 
-        /* Botão Flutuante */
+        /* Botão Flutuante WhatsApp */
         .zap-flutuante {
             position: fixed; width: 65px; height: 65px; bottom: 30px; right: 30px;
             background-color: #25d366; color: #FFF; border-radius: 50px;
@@ -95,12 +99,13 @@
         .card-review { background: #1e1e1e; padding: 25px; border-radius: 15px; border-bottom: 3px solid #8a2020; border: 1px solid #333; }
 
         footer { text-align: center; padding: 4rem; color: #777; font-size: 0.9rem; background: #0a0a0a; border-top: 1px solid #222; }
+        .footer-social a { color: #bbb; text-decoration: none; font-size: 1.2rem; transition: 0.3s; display: inline-flex; align-items: center; gap: 8px; margin-top: 15px; }
+        .footer-social a:hover { color: #E1306C; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         
-        /* Responsividade */
         @media (max-width: 600px) {
-            .nav-links a { font-size: 0.8rem; padding: 8px 10px; }
+            .nav-links a { font-size: 0.75rem; padding: 6px 8px; }
             header h1 { font-size: 1.8rem; }
             .hero h2 { font-size: 2rem; }
         }
@@ -113,6 +118,9 @@
         <a href="#servicos"><i class="fas fa-list"></i> Serviços</a>
         <a href="#galeria-drywall"><i class="fas fa-images"></i> Galeria</a>
         <a href="#orcamento"><i class="fas fa-file-contract"></i> Orçamento</a>
+        <a href="https://www.instagram.com/vinicios_gaspar?igsh=MTJiYzB1bWxpZjB1eA%3D%3D&utm_source=qr" target="_blank" class="nav-instagram">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
     </div>
 </nav>
 
@@ -127,13 +135,13 @@
 
 <section class="hero">
     <h2>Construção Moderna e Inteligente</h2>
-    <p>Especialistas em **Drywall** e **Steel Frame**. Entregamos obras rápidas, limpas e com acabamento de alto padrão em Goiânia e Região.</p>
+    <p>Especialistas em <strong>Drywall</strong> e <strong>Steel Frame</strong>. Entregamos obras rápidas, limpas e com acabamento de alto padrão em Goiânia e Região.</p>
 </section>
 
 <section id="servicos">
     <h2 class="section-title">Nossa Especialidade: <span>Drywall</span></h2>
     <div style="background: #1e1e1e; padding: 30px; border-radius: 15px; border-left: 5px solid #8a2020; color: #bbb; margin-bottom: 40px; border: 1px solid #333;">
-        <p style="margin:0;">O sistema **Drywall** (gesso acartonado) é ideal para quem busca flexibilidade e acabamento perfeito. Perfeito para forros decorativos, sancas, divisórias acústicas e nichos, garantindo uma obra rápida e sem sujeira.</p>
+        <p style="margin:0;">O sistema <strong>Drywall</strong> (gesso acartonado) é ideal para quem busca flexibilidade e acabamento perfeito. Perfeito para forros decorativos, sancas, divisórias acústicas e nichos, garantindo uma obra rápida e sem sujeira.</p>
     </div>
 
     <div id="galeria-drywall" class="galeria">
@@ -146,13 +154,13 @@
 <section id="steel-frame" style="background-color: #1a1a1a; border-radius: 20px;">
     <h2 class="section-title">O Futuro da Construção: <span>Steel Frame</span></h2>
     <div style="background: #1e1e1e; padding: 30px; border-radius: 15px; border-left: 5px solid #2196F3; color: #bbb; margin-bottom: 40px; border: 1px solid #333;">
-        <p style="margin:0;">O **Light Steel Framing** é um sistema construtivo industrializado, estruturado em aço galvanizado. É a solução mais rápida, sustentável e precisa para construções completas, acréscimos e fachadas, oferecendo isolamento térmico e acústico superior.</p>
+        <p style="margin:0;">O <strong>Light Steel Framing</strong> é um sistema construtivo industrializado, estruturado em aço galvanizado. É a solução mais rápida, sustentável e precisa para construções completas, acréscimos e fachadas, oferecendo isolamento térmico e acústico superior.</p>
     </div>
 
     <div class="galeria">
-        <div class="galeria-item"><img src="img/img/stell2.png" alt="Steel frame structure during assembly, showing galvanized metal beams and joints being constructed on a construction site"><div class="label">Estrutura em Aço</div></div>
-        <div class="galeria-item"><img src="img/img/stell1.png" alt="Residential building under construction using light steel framing system, displaying multi-story framework with metal studs and bracing"><div class="label">Construção Residencial</div></div>
-        <div class="galeria-item"><img src="img/img/stell3.png" alt="Steel frame building envelope being sealed and closed with wall panels, demonstrating precision finishing of steel frame construction"><div class="label">Alta Precisão</div></div>
+        <div class="galeria-item"><img src="img/img/stell2.png" alt="Steel frame structure"><div class="label">Estrutura em Aço</div></div>
+        <div class="galeria-item"><img src="img/img/stell1.png" alt="Residential building steel framing"><div class="label">Construção Residencial</div></div>
+        <div class="galeria-item"><img src="img/img/stell3.png" alt="Steel frame finishing"><div class="label">Alta Precisão</div></div>
     </div>
 </section>
 
@@ -209,7 +217,14 @@
 
 <footer>
     <img src="img/logotransparente.png" alt="Gaspar" style="height: 60px; width: auto; opacity: 0.5; margin-bottom: 20px;">
-    <p>&copy; 2026 Gaspar Construção Ágil. <br> Rapidez, Qualidade e Tecnologia em Goiás.</p>
+    
+    <div class="footer-social">
+        <a href="https://www.instagram.com/vinicios_gaspar?igsh=MTJiYzB1bWxpZjB1eA%3D%3D&utm_source=qr" target="_blank">
+            <i class="fab fa-instagram"></i> @vinicios_gaspar
+        </a>
+    </div>
+
+    <p style="margin-top: 20px;">&copy; 2026 Gaspar Construção Ágil. <br> Rapidez, Qualidade e Tecnologia em Goiás.</p>
 </footer>
 
 <script>
