@@ -3,233 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaspar Construção Ágil | Especialistas em Drywall</title>
+    <title>Gaspar Construção Ágil | Drywall e Steel Frame Goiânia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        /* Estilos Básicos e Reset - MODO ESCURO */
-        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; margin: 0; color: #e0e0e0; background-color: #121212; }
+        /* Estilos Básicos e Reset */
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 0; color: #e0e0e0; background-color: #121212; padding-top: 70px; /* Espaço para o menu fixo */ }
         
+        /* Menu Superior Fixo */
+        .navbar {
+            position: fixed; top: 0; left: 0; width: 100%; height: 70px;
+            background-color: rgba(26, 26, 26, 0.95);
+            display: flex; justify-content: center; align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3); z-index: 1001;
+            border-bottom: 2px solid #333;
+        }
+        .nav-links { display: flex; gap: 15px; }
+        .nav-links a {
+            text-decoration: none; color: #bbb; font-weight: 600; font-size: 0.9rem;
+            text-transform: uppercase; padding: 10px 15px; border-radius: 5px;
+            transition: all 0.3s ease; border: 1px solid transparent;
+        }
+        .nav-links a:hover { color: #fff; background-color: rgba(138, 32, 32, 0.1); border-color: #8a2020; }
+
         /* Cabeçalho */
         header { 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center; 
-            padding: 30px 20px; 
-            text-align: center; 
-            background-color: #1a1a1a; 
-            border-bottom: 3px solid #8a2020; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            display: flex; flex-direction: column; align-items: center; 
+            padding: 60px 20px 40px 20px; text-align: center; 
+            background: linear-gradient(180deg, #1a1a1a 0%, #121212 100%);
         }
-        header h1 { font-size: 1.8rem; color: white; margin: 10px 0 0 0; text-transform: uppercase; letter-spacing: 1px; }
+        header h1 { font-size: 2.2rem; color: #fff; margin: 15px 0 0 0; text-transform: uppercase; letter-spacing: 2px; }
         
         /* Seções */
-        section { padding: 3rem 1rem; max-width: 1000px; margin: auto; }
-        .hero { background: #1e1e1e; text-align: center; border-radius: 15px; margin-top: -20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-        .hero h2 { color: #8a2020; margin-bottom: 10px; }
+        section { padding: 5rem 1.5rem; max-width: 1100px; margin: auto; }
+        .hero { text-align: center; animation: fadeIn 1s ease-in; padding-top: 2rem; }
+        .hero h2 { color: #fff; font-size: 2.5rem; margin-bottom: 15px; }
+        .hero p { font-size: 1.2rem; color: #bbb; max-width: 700px; margin: 0 auto; }
+        .section-title { text-align: center; margin-bottom: 45px; font-size: 2rem; color: #fff; }
+        .section-title span { color: #8a2020; }
 
-        /* Galeria */
+        /* Galerias (Drywall e Steel Frame) */
         .galeria { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 20px; 
-            padding: 20px 0;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 25px; padding: 20px 0;
         }
+        .galeria-item { overflow: hidden; border-radius: 12px; border: 1px solid #333; position: relative; background-color: #1a1a1a; }
         .galeria img { 
-            width: 100%; 
-            height: 250px; 
-            object-fit: cover; 
-            border-radius: 12px; 
-            border: 1px solid #333;
-            transition: transform 0.3s;
+            width: 100%; height: 300px; object-fit: cover; display: block;
+            transition: transform 0.5s ease, opacity 0.3s ease;
         }
-        .galeria img:hover { transform: scale(1.03); border-color: #8a2020; }
+        .galeria-item:hover img { transform: scale(1.05); opacity: 0.8; }
+        .galeria-item .label {
+            position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0,0,0,0.7);
+            color: #fff; padding: 10px; font-size: 0.9rem; text-align: center; font-weight: 600;
+        }
 
         /* Container de Orçamento */
         .orcamento-box {
-            background: #1e1e1e;
-            padding: 30px;
-            border-radius: 15px;
-            border-top: 5px solid #25d366;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-            text-align: center;
+            background: #1e1e1e; padding: 50px 30px; border-radius: 20px;
+            border: 1px solid #333; border-top: 6px solid #25d366;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5); text-align: center;
         }
-        .form-group { margin-bottom: 15px; text-align: left; max-width: 400px; margin-left: auto; margin-right: auto; }
-        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; color: #bbb; }
+        .form-group { margin-bottom: 20px; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 8px; color: #fff; font-size: 0.9rem; }
         .form-group select, .form-group input { 
-            width: 100%; padding: 12px; border: 1px solid #444; border-radius: 8px; font-size: 16px; 
-            background-color: #2a2a2a; color: white;
+            width: 100%; padding: 16px; border: 1px solid #444; border-radius: 10px; font-size: 16px; 
+            background-color: #2a2a2a; color: white; transition: 0.3s;
         }
+        .form-group input:focus, .form-group select:focus { border-color: #25d366; outline: none; background: #333; }
 
         .btn-whatsapp { 
-            background: #25d366; color: white; padding: 18px 35px; 
+            background: #25d366; color: white; padding: 22px 50px; 
             text-decoration: none; border-radius: 50px; font-weight: bold;
-            display: inline-block; margin-top: 10px; border: none; cursor: pointer;
-            font-size: 18px; transition: background 0.3s;
+            display: inline-flex; align-items: center; gap: 12px; border: none; cursor: pointer;
+            font-size: 19px; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;
         }
-        .btn-whatsapp:hover { background: #1ebe57; transform: translateY(-2px); }
+        .btn-whatsapp:hover { background: #1ebe57; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); }
 
-        /* Footer */
-        footer { text-align: center; padding: 2rem; color: #555; font-size: 0.9rem; background: #0a0a0a; }
-
-        /* Botão Flutuante do WhatsApp */
+        /* Botão Flutuante */
         .zap-flutuante {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
+            position: fixed; width: 65px; height: 65px; bottom: 30px; right: 30px;
+            background-color: #25d366; color: #FFF; border-radius: 50px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 35px; box-shadow: 2px 5px 15px rgba(0,0,0,0.4);
+            z-index: 1000; transition: 0.3s; text-decoration: none;
         }
+        .zap-flutuante:hover { transform: scale(1.1); }
 
-        /* PLAYER DE MÚSICA */
-        .music-player {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background: rgba(26, 26, 26, 0.9);
-            padding: 10px 15px;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border: 1px solid #8a2020;
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        /* Feedback/Avaliações */
+        .card-review { background: #1e1e1e; padding: 25px; border-radius: 15px; border-bottom: 3px solid #8a2020; border: 1px solid #333; }
+
+        footer { text-align: center; padding: 4rem; color: #777; font-size: 0.9rem; background: #0a0a0a; border-top: 1px solid #222; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        
+        /* Responsividade */
+        @media (max-width: 600px) {
+            .nav-links a { font-size: 0.8rem; padding: 8px 10px; }
+            header h1 { font-size: 1.8rem; }
+            .hero h2 { font-size: 2rem; }
         }
-        .music-btn {
-            background: none;
-            border: none;
-            color: white;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        .music-btn:hover { color: #8a2020; }
     </style>
 </head>
 <body>
 
-<div class="music-player">
-    <button id="playBtn" class="music-btn" onclick="toggleMusic()">
-        <span id="musicIcon">▶</span> Som Ambiente
-    </button>
-</div>
+<nav class="navbar">
+    <div class="nav-links">
+        <a href="#servicos"><i class="fas fa-list"></i> Serviços</a>
+        <a href="#galeria-drywall"><i class="fas fa-images"></i> Galeria</a>
+        <a href="#orcamento"><i class="fas fa-file-contract"></i> Orçamento</a>
+    </div>
+</nav>
 
-<audio id="bgMusic" loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3" type="audio/mpeg">
-</audio>
-
-<a href="https://wa.me/556291828224" class="zap-flutuante" target="_blank">
-    <span style="font-family: Arial; font-weight: bold;">W</span>
+<a href="https://wa.me/556291828224" class="zap-flutuante" target="_blank" aria-label="Falar no WhatsApp">
+    <i class="fab fa-whatsapp"></i>
 </a>
 
 <header>
-    <img src="img/logotransparente.png" alt="Logo" style="height: 100px; width: auto;">
+    <img src="img/logotransparente.png" alt="Gaspar Construção Ágil" style="height: 110px; width: auto;">
     <h1>Gaspar Construção Ágil</h1>
 </header>
 
 <section class="hero">
-    <h2>Especialistas em Drywall</h2>
-    <p>Soluções modernas com forros e paredes de gesso acartonado para transformar seu ambiente.</p>
-</section>
-
-<section id="galeria">
-    <h2 style="text-align: center;">Conheça Nossos Trabalhos</h2>
-    <div class="galeria">
-        <img src="img/forro2.jpg" alt="Trabalho em Gesso 1">
-        <img src="img/forro1.jpg" alt="Trabalho em Gesso 2">
-        <img src="img/parede1.jpg" alt="Trabalho em Gesso 3">
-    </div>
+    <h2>Construção Moderna e Inteligente</h2>
+    <p>Especialistas em **Drywall** e **Steel Frame**. Entregamos obras rápidas, limpas e com acabamento de alto padrão em Goiânia e Região.</p>
 </section>
 
 <section id="servicos">
-    <div style="background: #1e1e1e; padding: 25px; border-radius: 12px; border-left: 5px solid #8a2020; color: #e0e0e0;">
-        <p>Utilizamos o <strong>sistema Drywall</strong>, uma tecnologia que garante obra limpa, rápida e acabamento impecável. Ideal para forros decorativos e divisórias funcionais.</p>
+    <h2 class="section-title">Nossa Especialidade: <span>Drywall</span></h2>
+    <div style="background: #1e1e1e; padding: 30px; border-radius: 15px; border-left: 5px solid #8a2020; color: #bbb; margin-bottom: 40px; border: 1px solid #333;">
+        <p style="margin:0;">O sistema **Drywall** (gesso acartonado) é ideal para quem busca flexibilidade e acabamento perfeito. Perfeito para forros decorativos, sancas, divisórias acústicas e nichos, garantindo uma obra rápida e sem sujeira.</p>
+    </div>
+
+    <div id="galeria-drywall" class="galeria">
+        <div class="galeria-item"><img src="img/forro2.jpg" alt="Forro de Gesso decorado"><div class="label">Forro Decorativo</div></div>
+        <div class="galeria-item"><img src="img/forro1.jpg" alt="Iluminação embutida em gesso"><div class="label">Iluminação Moderna</div></div>
+        <div class="galeria-item"><img src="img/parede1.jpg" alt="Parede divisória Drywall"><div class="label">Divisórias Ágeis</div></div>
+    </div>
+</section>
+
+<section id="steel-frame" style="background-color: #1a1a1a; border-radius: 20px;">
+    <h2 class="section-title">O Futuro da Construção: <span>Steel Frame</span></h2>
+    <div style="background: #1e1e1e; padding: 30px; border-radius: 15px; border-left: 5px solid #2196F3; color: #bbb; margin-bottom: 40px; border: 1px solid #333;">
+        <p style="margin:0;">O **Light Steel Framing** é um sistema construtivo industrializado, estruturado em aço galvanizado. É a solução mais rápida, sustentável e precisa para construções completas, acréscimos e fachadas, oferecendo isolamento térmico e acústico superior.</p>
+    </div>
+
+    <div class="galeria">
+        <div class="galeria-item"><img src="img/img/stell2.png" alt="Steel frame structure during assembly, showing galvanized metal beams and joints being constructed on a construction site"><div class="label">Estrutura em Aço</div></div>
+        <div class="galeria-item"><img src="img/img/stell1.png" alt="Residential building under construction using light steel framing system, displaying multi-story framework with metal studs and bracing"><div class="label">Construção Residencial</div></div>
+        <div class="galeria-item"><img src="img/img/stell3.png" alt="Steel frame building envelope being sealed and closed with wall panels, demonstrating precision finishing of steel frame construction"><div class="label">Alta Precisão</div></div>
     </div>
 </section>
 
 <section id="orcamento">
     <div class="orcamento-box">
-        <h2 style="color: white;">SOLICITE SEU ORÇAMENTO</h2>
-        <p>Preencha os detalhes abaixo para agilizar seu atendimento:</p>
+        <h2 style="margin-top:0; color: #fff; font-size: 2.2rem;">ORÇAMENTO EXPRESS</h2>
+        <p style="margin-bottom: 40px; color: #bbb; font-size: 1.1rem;">Preencha e receba uma estimativa no seu WhatsApp.</p>
         
         <div class="form-group">
-            <label>O que você precisa?</label>
+            <label><i class="fas fa-tools"></i> Qual o tipo de obra?</label>
             <select id="servico">
-                <option value="Forro de Gesso">Forro de Gesso</option>
-                <option value="Parede de Drywall">Parede de Drywall</option>
-                <option value="Reforma em Geral">Reforma Geral</option>
+                <option value="Forro de Gesso">Forro de Gesso (Teto/Sanca)</option>
+                <option value="Parede de Drywall">Parede de Drywall (Divisória)</option>
+                <option value="Estrutura em Steel Frame">Estrutura em Steel Frame (Construção Total)</option>
+                <option value="Reforma/Reparo">Reforma ou Reparo Geral</option>
             </select>
         </div>
 
         <div class="form-group">
-            <label>Onde será o serviço?</label>
+            <label><i class="fas fa-map-marker-alt"></i> Onde será o serviço?</label>
             <select id="local">
-                <option value="Área Interna">Área Interna (Quartos/Sala)</option>
-                <option value="Área Externa">Área Externa / Úmida</option>
+                <option value="Residencial (Interno)">Residencial (Interno)</option>
+                <option value="Residencial (Externo/Fachada)">Residencial (Externo/Fachada)</option>
+                <option value="Comercial/Loja">Comercial/Loja</option>
             </select>
         </div>
 
         <div class="form-group">
-            <label>Metragem aproximada (m²):</label>
-            <input type="number" id="metragem" placeholder="Ex: 25" min="1">
+            <label><i class="fas fa-ruler-combined"></i> Metragem aproximada da área (m²):</label>
+            <input type="number" id="metragem" placeholder="Ex: 50" min="1">
         </div>
 
         <button onclick="enviarWhatsapp()" class="btn-whatsapp">
-            ENVIAR DADOS VIA WHATSAPP
+            <i class="fab fa-whatsapp"></i> ENVIAR DADOS VIA WHATSAPP
         </button>
     </div>
 </section>
 
-<section id="avaliacoes" style="background: #1e1e1e; padding: 4rem 1rem; border-radius: 20px; margin-top: 20px;">
-    <h2 style="text-align: center; color: #8a2020; margin-bottom: 30px;">O que nossos clientes dizem</h2>
-    
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-        
-        <div style="background: #2a2a2a; padding: 20px; border-radius: 15px; border: 1px solid #333; position: relative;">
-            <div style="color: #f1c40f; font-size: 20px; margin-bottom: 10px;">★★★★★</div>
-            <p style="font-style: italic; color: #bbb;">"O trabalho de drywall no meu forro ficou impecável. Rapidez e limpeza nota 10!"</p>
-            <strong style="color: #fff;">— Ricardo Souza</strong>
+<section id="avaliacoes">
+    <h2 class="section-title">O Que Dizem Nossos <span>Clientes</span></h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+        <div class="card-review">
+            <div style="color: #f1c40f; margin-bottom: 15px; font-size: 1.2rem;">★★★★★</div>
+            <p style="font-style: italic;">"A equipe de drywall foi fantástica. Rápida, educada e o acabamento do forro ficou perfeito. Recomendo muito!"</p>
+            <strong style="color: #fff;">— Ricardo Souza, Goiânia</strong>
         </div>
-
-        <div style="background: #2a2a2a; padding: 20px; border-radius: 15px; border: 1px solid #333;">
-            <div style="color: #f1c40f; font-size: 20px; margin-bottom: 10px;">★★★★★</div>
-            <p style="font-style: italic; color: #bbb;">"Fizeram a divisória da minha loja em tempo recorde. Preço justo e muita qualidade."</p>
-            <strong style="color: #fff;">— Ana Paula (Loja Bella)</strong>
+        <div class="card-review">
+            <div style="color: #f1c40f; margin-bottom: 15px; font-size: 1.2rem;">★★★★★</div>
+            <p style="font-style: italic;">"Fizeram um acréscimo em Steel Frame na minha casa. A obra terminou antes do prazo e não teve nada de bagunça. Sensacional."</p>
+            <strong style="color: #fff;">— Marcos Oliveira, Aparecida</strong>
         </div>
-
-        <div style="background: #2a2a2a; padding: 20px; border-radius: 15px; border: 1px solid #333;">
-            <div style="color: #f1c40f; font-size: 20px; margin-bottom: 10px;">★★★★★</div>
-            <p style="font-style: italic; color: #bbb;">"Excelente atendimento desde o orçamento até o acabamento final. Recomendo!"</p>
-            <strong style="color: #fff;">— Marcos Oliveira</strong>
-        </div>
-
-    </div>
-
-    <div style="text-align: center; margin-top: 40px;">
-        <p style="font-weight: bold; color: #bbb;">Já é nosso cliente?</p>
-        <a href="https://wa.me/556291828224?text=Olá! Gostaria de deixar um elogio sobre o serviço." 
-           style="text-decoration: none; color: white; border: 2px solid #8a2020; padding: 10px 20px; border-radius: 50px; font-weight: bold; transition: 0.3s; background: #8a2020;">
-           DEIXAR MINHA AVALIAÇÃO
-        </a>
     </div>
 </section>
 
 <footer>
-    <p>&copy; 2026 Gaspar Construção Ágil. <br> Rapidez e qualidade em cada detalhe.</p>
+    <img src="img/logotransparente.png" alt="Gaspar" style="height: 60px; width: auto; opacity: 0.5; margin-bottom: 20px;">
+    <p>&copy; 2026 Gaspar Construção Ágil. <br> Rapidez, Qualidade e Tecnologia em Goiás.</p>
 </footer>
 
 <script>
@@ -239,32 +219,19 @@ function enviarWhatsapp() {
     const local = document.getElementById('local').value;
     const metragem = document.getElementById('metragem').value;
     
-    let mensagem = `Olá! Gostaria de um orçamento:\n\n`;
-    mensagem += `*Serviço:* ${servico}\n`;
-    mensagem += `*Local:* ${local}\n`;
-    
-    if(metragem) {
-        mensagem += `*Metragem:* ${metragem} m²`;
+    if(!metragem) {
+        alert("Por favor, informe a metragem aproximada para um orçamento mais preciso!");
+        return;
     }
+
+    let mensagem = `Olá! Vi o site e gostaria de um orçamento express para:\n\n`;
+    mensagem += `🚧 *Obra:* ${servico}\n`;
+    mensagem += `📍 *Local:* ${local}\n`;
+    mensagem += `📏 *Área:* ${metragem} m²\n\n`;
+    mensagem += `Aguardo retorno. Obrigado!`;
 
     const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
     window.open(url, '_blank');
-}
-
-function toggleMusic() {
-    const music = document.getElementById('bgMusic');
-    const btn = document.getElementById('musicIcon');
-    const playBtn = document.getElementById('playBtn');
-
-    if (music.paused) {
-        music.play();
-        btn.innerHTML = "⏸";
-        playBtn.style.color = "#8a2020";
-    } else {
-        music.pause();
-        btn.innerHTML = "▶";
-        playBtn.style.color = "white";
-    }
 }
 </script>
 
